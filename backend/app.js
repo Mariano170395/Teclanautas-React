@@ -2,6 +2,12 @@ const express = require('express');
 const cors = require('cors')
 const app = express();
 const sequelize = require('./db/conexion')
+
+//Vistas
+const user = require('./view/user')
+
+
+//Middleware
 app.use(express.json())
 app.use(cors())
 
@@ -23,6 +29,12 @@ let serverStart = async () => {
   
 
 serverStart()
+
+user(app)
+
+app.post('/',async (req,res)=>{
+    res.json('Hola')
+})
 
 
 app.post('/registro',async (req,res)=>{
