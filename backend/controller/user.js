@@ -1,6 +1,12 @@
 const userModel = require("../model/user");
+const jwt = require("jsonwebtoken");
 
 module.exports.loginUser = async (userData) => {
-  let result = await userModel.login(userData);
-  return result;
+  let response = await userModel.login(userData);
+  if (response.login) {
+    //El vector de iniciacion debe ser secreto
+    //Va en variables de entorno
+    return { token: await jwt.sign(response.data, "CheemsHeribertoGalletinRamoncito") };
+  }
+  return { error: "usuario no encontrado" };
 };
