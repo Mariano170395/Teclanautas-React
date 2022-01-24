@@ -33,7 +33,7 @@ const Login = () => {
       <div className="container">
         <br />
         <br />
-        <div className="card">
+        <div className="card w-100">
           <div className="card-body">
             <h5 className="card-title">Hola! Ingresa tus Datos</h5>
             {error && (
@@ -41,6 +41,7 @@ const Login = () => {
                 Has ingresado algun dato mal
               </div>
             )}
+            <br />
             <form onSubmit={logUser}>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">

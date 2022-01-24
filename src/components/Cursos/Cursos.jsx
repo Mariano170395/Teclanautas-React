@@ -1,11 +1,16 @@
 import { React, useState } from "react";
+import { crearCurso } from "../../api/api";
 import "./Cursos.css";
 
 const Cursos = () => {
   const [nombreCurso, setNombreCurso] = useState("");
   const [lugarCurso, setLugarCurso] = useState("");
   const [fechaCurso, setFechaCurso] = useState("");
-  const [submit, setSubmit] = useState([]);
+  const [submit, setSubmit] = useState({
+    nombre: "",
+    lugar: "",
+    fecha: "",
+  });
 
   const inputNombreHandle = (e) => {
     setNombreCurso(e.target.value);
@@ -19,13 +24,14 @@ const Cursos = () => {
     setFechaCurso(e.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     setSubmit({
       nombre: nombreCurso,
       lugar: lugarCurso,
       fecha: fechaCurso,
     });
-    console.log(submit);
+    let response = await crearCurso(submit)
+    return response
   };
 
   return (

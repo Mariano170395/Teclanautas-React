@@ -27,17 +27,18 @@ const helpApi = async(helpMsg) => {
  };
 
 
-//Post Curso
-  const postCurso = async(userData) => {
-   return await fetch('http://localhost:3001/login',{
-      method: "POST",
-      headers: {
-        "content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-   }) 
-   .then(res=> res.json())
-   .catch(error => console.log(error))
-  };
+//Crear Curso
+const crearCurso = async(curso) => {
+  let response = await fetch('http://localhost:3001/cursos',{
+    method:"POST",
+    headers: {
+      "content-Type": "application/json"
+    },
+    body: JSON.stringify(curso)
+  })
 
-export {apiLogin, postCurso, helpApi}
+  let resjson = await response.json()
+  return resjson
+ };
+
+export {apiLogin, crearCurso, helpApi}

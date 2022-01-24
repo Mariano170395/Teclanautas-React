@@ -6,6 +6,7 @@ const sequelize = require('./db/conexion')
 //Vistas
 const user = require('./view/user')
 const message =  require('./view/message')
+const curso = require('./view/curso')
 
 
 //Middleware
@@ -33,3 +34,4 @@ serverStart()
 
 user(app)
 message(app)
+curso(app)

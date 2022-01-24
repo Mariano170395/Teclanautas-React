@@ -1,6 +1,6 @@
 const messageModel = require("../model/message");
 
-module.exports.createMessage = async (userData) => {
-  let response = await messageModel.create(userData);
+module.exports.createMessage = async (msgHelp) => {
+  let response = await messageModel.create(msgHelp);
   return response;
 };
