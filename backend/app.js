@@ -7,7 +7,7 @@ const sequelize = require('./db/conexion')
 const user = require('./view/user')
 const message =  require('./view/message')
 const curso = require('./view/curso')
-
+require("dotenv").config()
 
 //Middleware
 app.use(express.json())

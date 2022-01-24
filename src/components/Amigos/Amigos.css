@@ -8,7 +8,6 @@
   .card{
       margin: 5px;
       padding: 25px;
-      width: 19.5rem;
   }
   
   .card-img-top{
@@ -40,4 +39,13 @@
   
   .ordenar{
       display: flex;
+  }
+
+  .avatarUsuario{
+      width: 5rem;
+      border-radius: 50%;
+  }
+
+  #TextoCard{
+      font-size: 1.5rem;
   }

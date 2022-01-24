@@ -1,7 +1,10 @@
 import React from "react";
-import './Amigos.css'
+import "./Amigos.css";
+import avatar from './Img/avatar.png'
 
 let Amigos = () => {
+
+  //Falta hacer fetch de amigos
 
   return (
     <>
@@ -27,15 +30,13 @@ let Amigos = () => {
         <div className="row">
           <div className="col-sm-12">
             <div className="containerFlex">
-              <div className="card">
-                <img
-                  src="../Amigos/Img/avatar-1577909_960_720.png"
-                  className="card-img-top"
-                  alt="..."
-                />
+              <div className="card text-center w-1">
                 <div className="card-body">
-                  <h5 className="card-title"></h5>
-                  <p className="card-text">@usuario</p>
+                  <img src={avatar} alt='Usuario' className="avatarUsuario"/>
+                  <h5 className="card-title">Nombre</h5>
+                  <p className="card-text" id='TextoCard'>
+                    Agregalo ahora a tu red de Teclanautas
+                  </p>
                   <a href="#" className="btn btn-primary">
                     Agregar
                   </a>
@@ -49,4 +50,4 @@ let Amigos = () => {
   );
 };
 
-export {Amigos};
+export { Amigos };

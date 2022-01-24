@@ -1,10 +1,14 @@
 import { React, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { apiLogin } from "../../api/api";
+import "./Login.css";
 
 const Login = () => {
   //Estado Login
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  //useNavigate
+  const Navigate = useNavigate()
 
   const logUser = async (event) => {
     event.preventDefault();
@@ -19,11 +23,16 @@ const Login = () => {
       console.log(loginResult);
       setLoading(false);
       if (loginResult.error) {
-        setError(true)
+        setError(true);
       }
       if (loginResult.token) {
         setError(false);
-        
+        localStorage.setItem("TOKEN", loginResult.token);
+        let data = loginResult.token.split(".");
+        //Paso de base64 a datos
+        let buffer = window.atob(data[1]);
+        localStorage.setItem("USER", buffer);
+        Navigate('/feed')
       }
     }
   };
@@ -52,8 +61,10 @@ const Login = () => {
                   className="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
+                  required
                 />
               </div>
+              <br />
               <div className="mb-3">
                 <label htmlFor="exampleInputPassword1" className="form-label">
                   Password
@@ -62,10 +73,12 @@ const Login = () => {
                   type="password"
                   className="form-control"
                   id="exampleInputPassword1"
+                  required
                 />
               </div>
               {!loading && (
                 <div className="d-grid gap-2">
+                  <br />
                   <button type="submit" className="btn btn-primary">
                     Submit
                   </button>
