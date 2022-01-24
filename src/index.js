@@ -9,12 +9,14 @@ import {Amigos} from './components/Amigos/Amigos'
 import { CrearUsuario } from "./components/CrearUsuario/CrearUsuario";
 import { NotFound } from "./components/NotFound/NotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import List from "./components/Listar/List";
 
 ReactDOM.render(
   <>
     <BrowserRouter>
       <Navbar />
       <Routes>
+        <Route path='list' element={<List/>}/>
         <Route path="/feed" element={<Feed />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/cursos" element={<Cursos />} />
