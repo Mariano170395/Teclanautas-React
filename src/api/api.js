@@ -23,7 +23,6 @@ const helpApi = async(helpMsg) => {
   })
 
   let resjson = await response.json()
-  console.log(resjson);
   return resjson
  };
 

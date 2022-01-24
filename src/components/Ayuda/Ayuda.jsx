@@ -20,13 +20,15 @@ const Ayuda = () => {
 
   const handleSubmitHelp = async(e) => {
     e.preventDefault();
-      setSubmitHelp({
+     setSubmitHelp({
        mail: mail,
        message: message,
      });
 
+
     let response = await helpApi(submitHelp)
-    console.log(response);
+    return response
+    
   };
 
   return (
