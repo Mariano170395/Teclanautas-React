@@ -1,6 +1,6 @@
-const userModel = require('../model/user')
+const userModel = require("../model/user");
 
-module.exports.loginUser = async(userData)=>{
-    let result = await userModel.login(userData)
-    return result
-}
+module.exports.loginUser = async (userData) => {
+  let result = await userModel.login(userData);
+  return result;
+};

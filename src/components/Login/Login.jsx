@@ -14,7 +14,7 @@ const Login = () => {
 
     // setLoading(true);
     let loginResult = await apiLogin(newLogin);
-    let loginResultParse = loginResult.json();
+    let loginResultParse = await loginResult.json();
     console.log(loginResultParse);
   };
 

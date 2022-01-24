@@ -5,6 +5,6 @@ module.exports = (app) => {
   app.post("/login", async (req, res) => {
     let result = await userController.loginUser(req.body);
     res.send({ result });
-    console.log('el req es', req.body);
+    console.log("el req es", req.body);
   });
 };
