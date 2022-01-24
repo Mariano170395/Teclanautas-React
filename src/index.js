@@ -10,6 +10,7 @@ import { CrearUsuario } from "./components/CrearUsuario/CrearUsuario";
 import { NotFound } from "./components/NotFound/NotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import List from "./components/Listar/List";
+import { Ayuda } from "./components/Ayuda/Ayuda";
 
 ReactDOM.render(
   <>
@@ -23,6 +24,7 @@ ReactDOM.render(
         <Route path="/login" element={<Login />} />
         <Route path='/crear-usuario' element={<CrearUsuario/>}/>
         <Route path='/amigos' element={<Amigos/>}/>
+        <Route path ='/ayuda' element={<Ayuda/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>

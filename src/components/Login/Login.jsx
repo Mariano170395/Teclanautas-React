@@ -37,7 +37,7 @@ const Login = () => {
           <div className="card-body">
             <h5 className="card-title">Hola! Ingresa tus Datos</h5>
             {error && (
-              <div class="alert alert-danger" role="alert">
+              <div className="alert alert-danger" role="alert">
                 Has ingresado algun dato mal
               </div>
             )}

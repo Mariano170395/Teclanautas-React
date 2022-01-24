@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import "./CrearUsuario.css";
-import { saveUser } from "../../api/api";
 
 const CrearUsuario = () => {
   const [user, setUser] = useState({
@@ -26,10 +25,10 @@ const CrearUsuario = () => {
     };
 
     setUser(usuarioCreado);
-    saveUser(usuarioCreado)
   };
 
 
+  
   
   return (
     <>

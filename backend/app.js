@@ -5,6 +5,7 @@ const sequelize = require('./db/conexion')
 
 //Vistas
 const user = require('./view/user')
+const message =  require('./view/message')
 
 
 //Middleware
@@ -31,14 +32,4 @@ let serverStart = async () => {
 serverStart()
 
 user(app)
-
-app.post('/',async (req,res)=>{
-    res.json('Hola')
-})
-
-
-app.post('/registro',async (req,res)=>{
-    let result = await req.body.user
-    console.log(result);
-    res.send(result)
-})
+message(app)
