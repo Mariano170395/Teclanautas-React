@@ -36,7 +36,7 @@ const Ayuda = () => {
       <div className="container">
         <br />
         <br />
-        <div className="card w-100">
+        <div className="card w-60">
           <div className="card-body">
             <h5 className="card-title">Necesitas Ayuda? Contactanos!</h5>
             <form onSubmit={handleSubmitHelp}>
@@ -69,6 +69,7 @@ const Ayuda = () => {
                   onChange={handleMessage}
                 ></textarea>
               </div>
+              <br />
               <div className="d-grid gap-2">
                 <button className="btn btn-primary" type="submit">
                   Enviar

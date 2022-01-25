@@ -17,7 +17,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path='list' element={<List/>}/>
+        <Route path='/list' element={<List/>}/>
         <Route path="/feed" element={<Feed />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/cursos" element={<Cursos />} />

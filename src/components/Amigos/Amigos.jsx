@@ -1,8 +1,20 @@
-import React from "react";
+import {React, useState} from "react";
 import "./Amigos.css";
 import avatar from './Img/avatar.png'
+import {listarUsuario} from '../../api/api'
 
 let Amigos = () => {
+
+  const [user, setUser] = useState([]);
+
+  const getUsers = async()=>{
+    let res = await listarUsuario()
+    let resjson =  res.json();
+   console.log('hola');
+  }
+
+  getUsers()
+
 
   //Falta hacer fetch de amigos
 
@@ -21,7 +33,7 @@ let Amigos = () => {
               />
             </div>
             <div className="col-sm-1">
-              <button className="btn btn-primary" id="btnBuscar">
+              <button className="btn btn-primary" id="btnBuscar" >
                 Buscar
               </button>
             </div>

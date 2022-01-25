@@ -7,6 +7,10 @@ const sequelize = require('./db/conexion')
 const user = require('./view/user')
 const message =  require('./view/message')
 const curso = require('./view/curso')
+const crearUsuario =  require('./view/crear-usuario')
+const userList = require('./view/listUser')
+
+
 require("dotenv").config()
 
 //Middleware
@@ -35,3 +39,6 @@ serverStart()
 user(app)
 message(app)
 curso(app)
+crearUsuario(app)
+userList(app)
+
