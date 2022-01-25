@@ -1,20 +1,20 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import "./Amigos.css";
-import avatar from './Img/avatar.png'
-import {listarUsuario} from '../../api/api'
+import avatar from "./Img/avatar.png";
+import { buscarUserApi } from "../../api/api";
 
 let Amigos = () => {
+  const [search, setSearch] = useState({name:''});
 
-  const [user, setUser] = useState([]);
+  const handleInput = (e) => {
+    setSearch({name: e.target.value});
+  };
 
-  const getUsers = async()=>{
-    let res = await listarUsuario()
-    let resjson =  res.json();
-   console.log('hola');
-  }
-
-  getUsers()
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let response = await buscarUserApi(search);
+    return response
+  };
 
   //Falta hacer fetch de amigos
 
@@ -30,10 +30,16 @@ let Amigos = () => {
                 type="text"
                 placeholder="Buscar"
                 className="form-control"
+                onChange={handleInput}
               />
             </div>
             <div className="col-sm-1">
-              <button className="btn btn-primary" id="btnBuscar" >
+              <button
+                className="btn btn-primary"
+                id="btnBuscar"
+                type="submit"
+                onClick={handleSubmit}
+              >
                 Buscar
               </button>
             </div>
@@ -44,9 +50,9 @@ let Amigos = () => {
             <div className="containerFlex">
               <div className="card text-center w-1">
                 <div className="card-body">
-                  <img src={avatar} alt='Usuario' className="avatarUsuario"/>
+                  <img src={avatar} alt="Usuario" className="avatarUsuario" />
                   <h5 className="card-title">Nombre</h5>
-                  <p className="card-text" id='TextoCard'>
+                  <p className="card-text" id="TextoCard">
                     Agregalo ahora a tu red de Teclanautas
                   </p>
                   <a href="#" className="btn btn-primary">

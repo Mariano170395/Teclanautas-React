@@ -40,15 +40,19 @@ const crearCurso = async (curso) => {
 };
 
 //Listar Usuario
-const listarUsuario = async()=>{
-  return await fetch('http://localhost:3001/user',{
-    method:'GET',
-    headers: {
-      "content-Type": "application/json",
-    }
-  })
-
-}
+const listarUsuario = async () => {
+  try {
+    let response = await fetch("http://localhost:3001/user", {
+      method: "GET",
+      headers: {
+        "content-Type": "application/json",
+      },
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 //Crear usuario
 const crearUsuarioApi = async (createUser) => {
@@ -62,4 +66,24 @@ const crearUsuarioApi = async (createUser) => {
   return response;
 };
 
-export { apiLogin, crearCurso, helpApi, crearUsuarioApi, listarUsuario };
+//Buscar un usuario
+
+const buscarUserApi = async (datosUser) => {
+  let response = await fetch("http://localhost:3001/search", {
+    method: "POST",
+    headers: {
+      "content-Type": "application/json",
+    },
+    body: JSON.stringify(datosUser),
+  });
+  return response;
+};
+
+export {
+  apiLogin,
+  crearCurso,
+  helpApi,
+  crearUsuarioApi,
+  listarUsuario,
+  buscarUserApi,
+};

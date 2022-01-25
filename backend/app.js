@@ -9,6 +9,7 @@ const message =  require('./view/message')
 const curso = require('./view/curso')
 const crearUsuario =  require('./view/crear-usuario')
 const userList = require('./view/listUser')
+const buscarUser = require('./view/buscar-user')
 
 
 require("dotenv").config()
@@ -41,4 +42,5 @@ message(app)
 curso(app)
 crearUsuario(app)
 userList(app)
+buscarUser(app)
 
