@@ -4,19 +4,21 @@ import avatar from "./Img/avatar.png";
 import { buscarUserApi } from "../../api/api";
 
 let Amigos = () => {
-  const [search, setSearch] = useState({name:''});
+  const [search, setSearch] = useState("");
+  const [getAmigo, setGetAmigo] = useState([]);
 
   const handleInput = (e) => {
-    setSearch({name: e.target.value});
+    setSearch(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let response = await buscarUserApi(search);
-    return response
+    const buscar = { name: search };
+    let response = await buscarUserApi(buscar);
+    setGetAmigo(response);
   };
 
-  //Falta hacer fetch de amigos
+
 
   return (
     <>
@@ -31,6 +33,7 @@ let Amigos = () => {
                 placeholder="Buscar"
                 className="form-control"
                 onChange={handleInput}
+                value={search}
               />
             </div>
             <div className="col-sm-1">
@@ -48,18 +51,23 @@ let Amigos = () => {
         <div className="row">
           <div className="col-sm-12">
             <div className="containerFlex">
-              <div className="card text-center w-1">
-                <div className="card-body">
-                  <img src={avatar} alt="Usuario" className="avatarUsuario" />
-                  <h5 className="card-title">Nombre</h5>
-                  <p className="card-text" id="TextoCard">
-                    Agregalo ahora a tu red de Teclanautas
-                  </p>
-                  <a href="#" className="btn btn-primary">
-                    Agregar
-                  </a>
+              {getAmigo.map((element) => {
+                return(
+                  <div className="card text-center w-1" key={element.email}>
+                  <div className="card-body">
+                    <img src={avatar} alt="Usuario" className="avatarUsuario" />
+                    <h5 className="card-title">{element.name}</h5>
+                    <p className="card-text" id="TextoCard">
+                      Agregalo ahora a tu red de Teclanautas
+                    </p>
+                    <a href="#" className="btn btn-primary">
+                      Agregar
+                    </a>
+                  </div>
                 </div>
-              </div>
+                )
+              })}
+ 
             </div>
           </div>
         </div>

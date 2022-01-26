@@ -67,16 +67,17 @@ const crearUsuarioApi = async (createUser) => {
 };
 
 //Buscar un usuario
-
 const buscarUserApi = async (datosUser) => {
-  let response = await fetch("http://localhost:3001/search", {
+  return await fetch("http://localhost:3001/search", {
     method: "POST",
     headers: {
       "content-Type": "application/json",
     },
     body: JSON.stringify(datosUser),
-  });
-  return response;
+  })
+  .then(res => res.json())
+  .catch(error => console.error(error))
+ 
 };
 
 export {

@@ -1,14 +1,19 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiLogin } from "../../api/api";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 import "./Login.css";
 
 const Login = () => {
   //Estado Login
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  //Custom Hook
+  const [user, saveUser] = useLocalStorage("USER_DATA", {});
+  const [token, saveToken] = useLocalStorage("TOKEN", {});
+
   //useNavigate
-  const Navigate = useNavigate()
+  const Navigate = useNavigate();
 
   const logUser = async (event) => {
     event.preventDefault();
@@ -27,12 +32,15 @@ const Login = () => {
       }
       if (loginResult.token) {
         setError(false);
-        localStorage.setItem("TOKEN", loginResult.token);
+        // localStorage.setItem("TOKEN", loginResult.token);
+        saveToken({token: loginResult.token})
         let data = loginResult.token.split(".");
         //Paso de base64 a datos
-        let buffer = window.atob(data[1]);
-        localStorage.setItem("USER", buffer);
-        Navigate('/feed')
+        let datoUser = window.atob(data[1]);
+        saveUser(datoUser);
+        console.log(user);
+        console.log(token);
+         Navigate('/perfil')
       }
     }
   };

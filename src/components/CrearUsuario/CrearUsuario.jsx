@@ -20,7 +20,10 @@ const CrearUsuario = () => {
       name: event.target[2].value,
       last_name: event.target[3].value,
       brd_date: event.target[4].value,
-      img: event.target[5].value,
+      hobby: event.target[5].value,
+      puesto: event.target[6].value,
+      habilidad: event.target[7].value,
+      img: event.target[8].value,
     };
 
     setUser(usuarioCreado);
@@ -64,6 +67,18 @@ const CrearUsuario = () => {
             <div className="mb-3">
               <label className="form-label">Fecha de Nacimiento</label>
               <input type="date" className="form-control" />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Hobby</label>
+              <input type="text" className="form-control" />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Puesto</label>
+              <input type="text" className="form-control" />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Habilidad</label>
+              <input type="text" className="form-control" />
             </div>
             <div className="mb-3">
               <label className="form-label">Ingresa el link de tu Imagen</label>
