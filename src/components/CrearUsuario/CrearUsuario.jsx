@@ -1,8 +1,12 @@
 import { React, useState } from "react";
 import { crearUsuarioApi } from "../../api/api";
+import { useNavigate } from "react-router-dom";
 import "./CrearUsuario.css";
 
 const CrearUsuario = () => {
+
+  const Navigate = useNavigate();
+
   const [user, setUser] = useState({
     email:"",
     pass:"",
@@ -28,6 +32,7 @@ const CrearUsuario = () => {
 
     setUser(usuarioCreado);
     let response = await crearUsuarioApi(usuarioCreado)
+    Navigate('/login')
     return response
   };
 

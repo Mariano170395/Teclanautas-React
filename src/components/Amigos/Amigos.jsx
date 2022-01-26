@@ -55,7 +55,7 @@ let Amigos = () => {
                 return(
                   <div className="card text-center w-1" key={element.email}>
                   <div className="card-body">
-                    <img src={avatar} alt="Usuario" className="avatarUsuario" />
+                    <img src={element.img} alt="Usuario" className="avatarUsuario" />
                     <h5 className="card-title">{element.name}</h5>
                     <p className="card-text" id="TextoCard">
                       Agregalo ahora a tu red de Teclanautas

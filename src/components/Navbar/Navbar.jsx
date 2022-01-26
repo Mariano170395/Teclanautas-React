@@ -12,9 +12,10 @@ const Navbar = () => {
   const [user, saveUser] = useLocalStorage("USER_DATA", {});
   const [token, saveToken] = useLocalStorage("TOKEN", {});
 
+  
+
   let cerrarSesion = ()=>{
-    saveUser('')
-    saveToken('')
+    console.log('hola');
   }
 
   return(

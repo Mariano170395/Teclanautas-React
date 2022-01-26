@@ -22,7 +22,7 @@ ReactDOM.render(
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/cursos" element={<Cursos />} />
         <Route path="/login" element={<Login />} />
-        <Route path='/crear-usuario' element={<CrearUsuario/>}/>
+        <Route path='/' element={<CrearUsuario/>}/>
         <Route path='/usuarios' element={<Amigos/>}/>
         <Route path ='/ayuda' element={<Ayuda/>}/>
         <Route path='*' element={<NotFound/>}/>
