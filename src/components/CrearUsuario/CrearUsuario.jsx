@@ -32,7 +32,7 @@ const CrearUsuario = () => {
 
     setUser(usuarioCreado);
     let response = await crearUsuarioApi(usuarioCreado)
-    Navigate('/login')
+    Navigate('/')
     return response
   };
 
@@ -44,7 +44,8 @@ const CrearUsuario = () => {
       <div className="container">
         <br />
         <br />
-        <div className="card w-100">
+        <div className="card" id='cardForm'>
+          <h1>Ingresa tus Datos:</h1>
           <form onSubmit={createUser}>
             <div className="mb-3">
               <label className="form-label">Email</label>
@@ -67,31 +68,31 @@ const CrearUsuario = () => {
             </div>
             <div className="mb-3">
               <label className="form-label">Apellidos</label>
-              <input type="text" className="form-control" />
+              <input type="text" className="form-control" required />
             </div>
             <div className="mb-3">
               <label className="form-label">Fecha de Nacimiento</label>
-              <input type="date" className="form-control" />
+              <input type="date" className="form-control" required/>
             </div>
             <div className="mb-3">
               <label className="form-label">Hobby</label>
-              <input type="text" className="form-control" />
+              <input type="text" className="form-control" required/>
             </div>
             <div className="mb-3">
               <label className="form-label">Puesto</label>
-              <input type="text" className="form-control" />
+              <input type="text" className="form-control" required/>
             </div>
             <div className="mb-3">
               <label className="form-label">Habilidad</label>
-              <input type="text" className="form-control" />
+              <input type="text" className="form-control" required/>
             </div>
             <div className="mb-3">
               <label className="form-label">Ingresa el link de tu Imagen</label>
-              <input type="text" className="form-control" id="imagen_usuario" />
+              <input type="text" className="form-control"  required/>
             </div>
 
             <div className="d-grid gap-2 col-12 mx-auto">
-              <button className="btn btn-primary" type="submit">
+              <button className="btn btn-primary" type="submit" id='btnLogin'>
                 Registro
               </button>
             </div>

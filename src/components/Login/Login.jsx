@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { apiLogin } from "../../api/api";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import "./Login.css";
@@ -33,14 +34,14 @@ const Login = () => {
       if (loginResult.token) {
         setError(false);
         // localStorage.setItem("TOKEN", loginResult.token);
-        saveToken({token: loginResult.token})
+        saveToken({ token: loginResult.token });
         let data = loginResult.token.split(".");
         //Paso de base64 a datos
         let datoUser = window.atob(data[1]);
         saveUser(datoUser);
         console.log(user);
         console.log(token);
-         Navigate('/perfil')
+        Navigate("/home");
       }
     }
   };
@@ -50,56 +51,64 @@ const Login = () => {
       <div className="container">
         <br />
         <br />
-        <div className="card w-100">
-          <div className="card-body">
-            <h5 className="card-title">Hola! Ingresa tus Datos</h5>
-            {error && (
-              <div className="alert alert-danger" role="alert">
-                Has ingresado algun dato mal
-              </div>
-            )}
-            <br />
-            <form onSubmit={logUser}>
-              <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  required
-                />
-              </div>
-              <br />
-              <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="exampleInputPassword1"
-                  required
-                />
-              </div>
-              {!loading && (
-                <div className="d-grid gap-2">
-                  <br />
-                  <button type="submit" className="btn btn-primary">
-                    Submit
-                  </button>
+        <div className="col d-flex justify-content-center">
+          <div className="card w-100">
+            <div className="card-body">
+              <h5 className="card-title">Hola! Ingresa tus Datos</h5>
+              {error && (
+                <div className="alert alert-danger" role="alert">
+                  Has ingresado algun dato mal
                 </div>
               )}
-            </form>
-            {loading && (
-              <div className="text-center">
-                <div className="spinner-grow text-primary" role="status">
-                  <span className="visually-hidden">Cargando...</span>
+              <br />
+              <form onSubmit={logUser}>
+                <div className="mb-3">
+                  <label htmlFor="exampleInputEmail1" className="form-label">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    required
+                  />
                 </div>
+                <br />
+                <div className="mb-3">
+                  <label htmlFor="exampleInputPassword1" className="form-label">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="exampleInputPassword1"
+                    required
+                  />
+                </div>
+                {!loading && (
+                  <div className="d-grid gap-2">
+                    <br />
+                    <button type="submit" className="btn btn-primary" id='btnLogin'>
+                      Submit
+                    </button>
+                  </div>
+                )}
+              </form>
+              {loading && (
+                <div className="text-center">
+                  <div className="spinner-grow text-primary" role="status">
+                    <span className="visually-hidden">Cargando...</span>
+                  </div>
+                </div>
+              )}
+              <div>
+                <NavLink to="/crear-usuario">
+                  <br />
+                  <h5 className="noTienesCuenta">No tienes cuenta aun?</h5>
+                </NavLink>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </div>
