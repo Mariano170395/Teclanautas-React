@@ -49,7 +49,7 @@ const CrearUsuario = () => {
           <form onSubmit={createUser}>
             <div className="mb-3">
               <label className="form-label">Email</label>
-              <input type="email" className="form-control" />
+              <input type="email" className="form-control" required/>
             </div>
             <div className="mb-3">
               <label className="form-label">Contraseña</label>
@@ -57,6 +57,7 @@ const CrearUsuario = () => {
                 type="password"
                 className="form-control"
                 id="correo_usuario"
+                required
               />
             </div>
             <div className="mb-3">
@@ -64,6 +65,7 @@ const CrearUsuario = () => {
               <input
                 type="text"
                 className="form-control"
+                required
               />
             </div>
             <div className="mb-3">
@@ -76,7 +78,7 @@ const CrearUsuario = () => {
             </div>
             <div className="mb-3">
               <label className="form-label">Hobby</label>
-              <input type="text" className="form-control" required/>
+              <input type="text" className="form-control" />
             </div>
             <div className="mb-3">
               <label className="form-label">Puesto</label>
@@ -84,11 +86,11 @@ const CrearUsuario = () => {
             </div>
             <div className="mb-3">
               <label className="form-label">Habilidad</label>
-              <input type="text" className="form-control" required/>
+              <input type="text" className="form-control" />
             </div>
             <div className="mb-3">
               <label className="form-label">Ingresa el link de tu Imagen</label>
-              <input type="text" className="form-control"  required/>
+              <input type="text" className="form-control"  />
             </div>
 
             <div className="d-grid gap-2 col-12 mx-auto">

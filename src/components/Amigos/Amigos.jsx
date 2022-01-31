@@ -2,14 +2,19 @@ import { React, useState } from "react";
 import "./Amigos.css";
 import avatar from "./Img/avatar.png";
 import { buscarUserApi } from "../../api/api";
+import { Link } from "react-router-dom";
 //Redux
 import { connect } from 'react-redux';
 import {setSearch} from '../../store/actions/searchActions'
 
 
 let Amigos = ({setSearch, searchGlobalState}) => {
+
+
+
   const [searchAmigo, setSearchAmigo] = useState(searchGlobalState);
   const [getAmigo, setGetAmigo] = useState([]);
+
 
   const handleInput = (e) => {
     setSearchAmigo(e.target.value);
@@ -64,20 +69,23 @@ let Amigos = ({setSearch, searchGlobalState}) => {
             <div className="containerFlex">
               {getAmigo.map((element) => {
                 return(
-                  <div className="card text-center w-1" key={element.email}>
+                  <div className="card text-center w-1" key={element.id}>
                   <div className="card-body">
                     <img src={element.img} alt="Usuario" className="avatarUsuario" />
                     <h5 className="card-title">{element.name}</h5>
                     <p className="card-text" id="TextoCard">
                       Agregalo ahora a tu red de Teclanautas
                     </p>
-                    <a href="#" className="btn btn-primary" onClick={()=>irAmigo}>
-                      Ir a su perfil
-                    </a>
+                    <Link to={`/perfil/${element.id}`}  >
+                      <h1>Ir a su perfil</h1>
+                    </Link>
                   </div>
                 </div>
                 )
-              })}
+
+              })
+             
+              }
  
             </div>
           </div>

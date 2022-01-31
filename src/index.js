@@ -17,7 +17,6 @@ ReactDOM.render(
   <>
     <Provider store={store}>
       <BrowserRouter>
-        {/* <Navbar /> */}
         <Routes>
           <Route path="/home" element={<HomePage />} />
           <Route path="/perfil/:id" element={<PerfIdPage />} />
