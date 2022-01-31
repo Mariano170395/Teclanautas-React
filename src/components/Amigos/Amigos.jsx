@@ -4,17 +4,12 @@ import avatar from "./Img/avatar.png";
 import { buscarUserApi } from "../../api/api";
 import { Link } from "react-router-dom";
 //Redux
-import { connect } from 'react-redux';
-import {setSearch} from '../../store/actions/searchActions'
+import { connect } from "react-redux";
+import { setSearch } from "../../store/actions/searchActions";
 
-
-let Amigos = ({setSearch, searchGlobalState}) => {
-
-
-
+let Amigos = ({ setSearch, searchGlobalState }) => {
   const [searchAmigo, setSearchAmigo] = useState(searchGlobalState);
   const [getAmigo, setGetAmigo] = useState([]);
-
 
   const handleInput = (e) => {
     setSearchAmigo(e.target.value);
@@ -23,18 +18,17 @@ let Amigos = ({setSearch, searchGlobalState}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setSearch(searchAmigo)
+    setSearch(searchAmigo);
 
     const buscar = { name: searchAmigo };
     let response = await buscarUserApi(buscar);
     setGetAmigo(response);
   };
 
-
-  const irAmigo = (e)=>{
-    e.preventDefault()
-    console.log('hola');
-  }
+  const irAmigo = (e) => {
+    e.preventDefault();
+    console.log("hola");
+  };
 
   return (
     <>
@@ -68,25 +62,25 @@ let Amigos = ({setSearch, searchGlobalState}) => {
           <div className="col-sm-12">
             <div className="containerFlex">
               {getAmigo.map((element) => {
-                return(
+                return (
                   <div className="card text-center w-1" key={element.id}>
-                  <div className="card-body">
-                    <img src={element.img} alt="Usuario" className="avatarUsuario" />
-                    <h5 className="card-title">{element.name}</h5>
-                    <p className="card-text" id="TextoCard">
-                      Agregalo ahora a tu red de Teclanautas
-                    </p>
-                    <Link to={`/perfil/${element.id}`}  >
-                      <h1>Ir a su perfil</h1>
-                    </Link>
+                    <div className="card-body">
+                      <img
+                        src={element.img}
+                        alt="Usuario"
+                        className="avatarUsuario"
+                      />
+                      <h5 className="card-title">{element.name}</h5>
+                      <p className="card-text" id="TextoCard">
+                        Agregalo ahora a tu red de Teclanautas
+                      </p>
+                      <Link to={`/perfil/${element.id}`} >
+                        <h5>Ir a su perfil</h5>
+                      </Link>
+                    </div>
                   </div>
-                </div>
-                )
-
-              })
-             
-              }
- 
+                );
+              })}
             </div>
           </div>
         </div>
@@ -95,10 +89,9 @@ let Amigos = ({setSearch, searchGlobalState}) => {
   );
 };
 
-const mapStateToProps = (state)=>({
-    searchGlobalState: state.searchReducer.search
-})
+const mapStateToProps = (state) => ({
+  searchGlobalState: state.searchReducer.search,
+});
 
-export default connect(mapStateToProps, {setSearch})(Amigos)
+export default connect(mapStateToProps, { setSearch })(Amigos);
 // export { Amigos }
-
