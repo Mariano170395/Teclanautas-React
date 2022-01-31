@@ -4,34 +4,18 @@ import Icon from "./Img/Icon.png";
 import Avatar from "./Img/avatar.png";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
+
 const Perfil = () => {
   const [user] = useLocalStorage("USER_DATA", {});
+
+
 
   return (
     <>
       <br />
       <br />
-      <div className="container">
-        {/* <div classNameName="card">
-          <div className="container">
-            <div className="row">
-              <div className="col-4">
-                <img src={Avatar} alt={Avatar} classNameName="fotoPerfil"/>
-              </div>
-              <div className="col-8">
-                <h1 classNameName="nombrePerfil">{user.name} {user.last_name}</h1>
-                <h3 classNameName="nombrePerfil">{user.email}</h3>
-                <h3 classNameName="nombrePerfil">{user.brd_date}</h3>
-                
-
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">1 of 2</div>
-            </div>
-          </div>
-        </div> */}
-        <div className="card mb-3">
+       <div className="container">
+         <div className="card mb-3">
           <div className="row g-0">
             <div className="col-md-4">
               <img
@@ -58,32 +42,7 @@ const Perfil = () => {
             </div>
           </div>
         </div>
-      </div>
-      {/* <div classNameName="container-lg">
-        <div classNameName="row">
-          <div classNameName="col-12">
-            <div id="divNombre">
-              <h5>{user.name} {user.last_name}</h5>
-              <h5>{user.brd_date}</h5>
-            </div>
-          </div>
-          <div classNameName="col-4">
-            <div id="divImg"></div>
-          </div>
-          <div classNameName="col-6">
-            <div id="divCorreo">{user.email}</div>
-            <div id="divPais"></div>
-            <div id="divHobby"></div>
-            <div id="divPuesto"></div>
-          </div>
-          <div classNameName="col-9"></div>
-        </div>
-      </div> */}
-      {/* <div classNameName="div-btn-msj">
-        <a href="#">
-          <img src={Icon} classNameName="msg-btn" />
-        </a>
-      </div> */}
+      </div> 
     </>
   );
 };

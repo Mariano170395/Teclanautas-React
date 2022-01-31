@@ -80,6 +80,19 @@ const buscarUserApi = async (datosUser) => {
  
 };
 
+//User por id
+const userIdApi = async (id) => {
+  return await fetch("http://localhost:3001/user/"+ id, {
+    method: "GET",
+    headers: {
+      "content-Type": "application/json",
+    },
+  })
+  .then(res => res.json())
+  .catch(error => console.error(error))
+ 
+};
+
 export {
   apiLogin,
   crearCurso,
@@ -87,4 +100,5 @@ export {
   crearUsuarioApi,
   listarUsuario,
   buscarUserApi,
+  userIdApi
 };
