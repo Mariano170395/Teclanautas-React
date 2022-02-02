@@ -34,6 +34,7 @@ const Cursos = () => {
     return response
   };
 
+
   return (
     <div className="container">
       <br />

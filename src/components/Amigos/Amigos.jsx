@@ -7,8 +7,9 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setSearch } from "../../store/actions/searchActions";
 
-let Amigos = ({ setSearch, searchGlobalState }) => {
-  const [searchAmigo, setSearchAmigo] = useState(searchGlobalState);
+let Amigos = () => {
+  
+  const [searchAmigo, setSearchAmigo] = useState('');
   const [getAmigo, setGetAmigo] = useState([]);
 
   const handleInput = (e) => {
@@ -25,10 +26,7 @@ let Amigos = ({ setSearch, searchGlobalState }) => {
     setGetAmigo(response);
   };
 
-  const irAmigo = (e) => {
-    e.preventDefault();
-    console.log("hola");
-  };
+
 
   return (
     <>
@@ -89,9 +87,9 @@ let Amigos = ({ setSearch, searchGlobalState }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  searchGlobalState: state.searchReducer.search,
-});
+ const mapStateToProps = (state) => ({
+   searchGlobalState: state.searchReducer.search,
+ });
 
-export default connect(mapStateToProps, { setSearch })(Amigos);
-// export { Amigos }
+ export default connect(mapStateToProps, { setSearch })(Amigos);
+

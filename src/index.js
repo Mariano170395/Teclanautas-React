@@ -9,6 +9,7 @@ import { UsuariosPage } from "./pages/UsuariosPage";
 import { CursosPages } from "./pages/CursosPages";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { PerfIdPage } from "./pages/PerfIdPage";
+import { NotificacionesPage } from "./pages/NotificacionesPage";
 //Redux
 import { Provider } from "react-redux";
 import store from "./store/store";
@@ -18,8 +19,9 @@ ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<HomePage />} />
           <Route path="/perfil/:id" element={<PerfIdPage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/notificaciones" element={<NotificacionesPage />} />
           <Route path="/perfil" element={<PerfilPage />} />
           <Route path="/crear-usuario" element={<CrearUsuarioPage />} />
           <Route path="/usuarios" element={<UsuariosPage />} />

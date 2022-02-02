@@ -1,7 +1,43 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import "./Feed.css";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+//Redux
+//Actions
+import { save } from "../../redux/actions/post";
+//Connect
+import { connect } from "react-redux";
 
-const Feed = () => {
+//Primer paso con Redux
+//Mapeo el estado hacia propiedades
+const mapStateToProps = (state) => {
+  return {
+    posts: state.postReducer.post,
+  };
+};
+
+const Feed = ({ posts, save }) => {
+
+  console.log(posts);
+  const [user] = useLocalStorage("USER_DATA", {});
+
+  //Cambiar titulo
+  useEffect(() => {
+    document.title = `Hola ${user.name}`;
+  }, []);
+
+  // const [post, setPost] = useState([]);
+
+  const submit = (event) => {
+    event.preventDefault();
+    let newPost = {
+      id: posts.length + 1,
+      contenido: event.target[0].value,
+    };
+
+    event.target.reset();
+    save([...posts, newPost]);
+  };
+
   return (
     <>
       <br />
@@ -9,32 +45,35 @@ const Feed = () => {
         <div className="card">
           <h5 className="card-header">Crear Post</h5>
           <div className="card-body">
-            <div className="row">
-              <div className="col-12">
-                <input
-                  type="text"
-                  placeholder="Que quieres contarnos?"
-                  className="inputPost"
-                  id="inputPost"
-                />
+            <form onSubmit={submit}>
+              <div className="mb-3 form-check">
+                <div className="form-floating">
+                  <textarea
+                    className="form-control"
+                    placeholder="Escribe tu cita aqui"
+                    id="floatingTextarea2"
+                    required
+                  ></textarea>
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-12" id="flexBtn">
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  id="btnSubmit"
-                >
-                  Enviar
-                </button>
-              </div>
-            </div>
+              <button className="btn btn-primary">Submit</button>
+            </form>
           </div>
         </div>
+        {/* {posts.map((q) => {
+          return (
+            <div className="card" key={q.id}>
+              <div className="card-body">
+                <p className="card-text">{q.contenido}</p>
+              </div>
+            </div>
+          );
+        })} */}
       </div>
+      <br />
+      <br />
     </>
   );
 };
 
-export { Feed };
+export default connect (mapStateToProps, {save})(Feed)
