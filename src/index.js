@@ -12,7 +12,7 @@ import { PerfIdPage } from "./pages/PerfIdPage";
 import { NotificacionesPage } from "./pages/NotificacionesPage";
 //Redux
 import { Provider } from "react-redux";
-import store from "./store/store";
+import {store} from "../src/redux/store/index";
 
 ReactDOM.render(
   <>

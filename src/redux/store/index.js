@@ -2,7 +2,7 @@ import { createStore, combineReducers } from "redux";
 import { postReducer } from "../reducers/post";
 
 const reducers = combineReducers({
-  postReducer,
+  postReducer
 });
 
 const store = createStore(

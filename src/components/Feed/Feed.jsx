@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
 
 const Feed = ({ posts, save }) => {
 
-  console.log(posts);
+  console.log(posts.length);
   const [user] = useLocalStorage("USER_DATA", {});
 
   //Cambiar titulo
@@ -30,12 +30,12 @@ const Feed = ({ posts, save }) => {
   const submit = (event) => {
     event.preventDefault();
     let newPost = {
-      id: posts.length + 1,
+      id: posts.length,
       contenido: event.target[0].value,
     };
 
     event.target.reset();
-    save([...posts, newPost]);
+    save(...posts, newPost);
   };
 
   return (
@@ -60,15 +60,15 @@ const Feed = ({ posts, save }) => {
             </form>
           </div>
         </div>
-        {/* {posts.map((q) => {
+       {posts.map((post) => {
           return (
-            <div className="card" key={q.id}>
+            <div className="card" key={post.id}>
               <div className="card-body">
-                <p className="card-text">{q.contenido}</p>
+                <p className="card-text">{post.contenido}</p>
               </div>
             </div>
           );
-        })} */}
+        })} 
       </div>
       <br />
       <br />

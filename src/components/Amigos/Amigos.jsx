@@ -3,28 +3,26 @@ import "./Amigos.css";
 import avatar from "./Img/avatar.png";
 import { buscarUserApi } from "../../api/api";
 import { Link } from "react-router-dom";
-//Redux
-import { connect } from "react-redux";
-import { setSearch } from "../../store/actions/searchActions";
+
 
 let Amigos = () => {
   
-  const [searchAmigo, setSearchAmigo] = useState('');
-  const [getAmigo, setGetAmigo] = useState([]);
+  // const [searchAmigo, setSearchAmigo] = useState('');
+  // const [getAmigo, setGetAmigo] = useState([]);
 
-  const handleInput = (e) => {
-    setSearchAmigo(e.target.value);
-  };
+  // const handleInput = (e) => {
+  //   setSearchAmigo(e.target.value);
+  // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    setSearch(searchAmigo);
+  //   setSearch(searchAmigo);
 
-    const buscar = { name: searchAmigo };
-    let response = await buscarUserApi(buscar);
-    setGetAmigo(response);
-  };
+  //   const buscar = { name: searchAmigo };
+  //   let response = await buscarUserApi(buscar);
+  //   setGetAmigo(response);
+  // };
 
 
 
@@ -40,8 +38,8 @@ let Amigos = () => {
                 type="text"
                 placeholder="Buscar"
                 className="form-control"
-                onChange={handleInput}
-                value={searchAmigo}
+                // onChange={handleInput}
+                // value={searchAmigo}
               />
             </div>
             <div className="col-sm-1">
@@ -49,7 +47,7 @@ let Amigos = () => {
                 className="btn btn-primary"
                 id="btnBuscar"
                 type="submit"
-                onClick={handleSubmit}
+                // onClick={handleSubmit}
               >
                 Buscar
               </button>
@@ -59,7 +57,7 @@ let Amigos = () => {
         <div className="row">
           <div className="col-sm-12">
             <div className="containerFlex">
-              {getAmigo.map((element) => {
+              {/* {getAmigo.map((element) => {
                 return (
                   <div className="card text-center w-1" key={element.id}>
                     <div className="card-body">
@@ -78,7 +76,7 @@ let Amigos = () => {
                     </div>
                   </div>
                 );
-              })}
+              })} */}
             </div>
           </div>
         </div>
@@ -87,9 +85,4 @@ let Amigos = () => {
   );
 };
 
- const mapStateToProps = (state) => ({
-   searchGlobalState: state.searchReducer.search,
- });
-
- export default connect(mapStateToProps, { setSearch })(Amigos);
-
+export default Amigos
