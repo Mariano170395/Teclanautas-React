@@ -4,20 +4,6 @@ body{
     padding: 0%;
   }
   
-  /*Saludo*/
-  .NombreSaludo{
-    font-size: 2.5vmin;
-    color: white;
-  
-  }
-  
-  .Hola{
-    text-decoration: none;
-  }
-  
-  .NombreSaludo:hover {
-    color: rgb(229, 255, 85);
-  }
 
   #cardTitulo{
     height: 10vmin;

@@ -4,15 +4,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoginPage } from "./pages/LoginPage";
 import { HomePage } from "./pages/HomePage";
 import { PerfilPage } from "./pages/PerfilPage";
-import { CrearUsuarioPage } from "./pages/crearUsuarioPage";
+import { CrearUsuarioPage } from "./pages/CrearUsuarioPage";
 import { UsuariosPage } from "./pages/UsuariosPage";
 import { CursosPages } from "./pages/CursosPages";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { PerfIdPage } from "./pages/PerfIdPage";
 import { NotificacionesPage } from "./pages/NotificacionesPage";
+import { AyudaPage } from "./pages/AyudaPage";
 //Redux
 import { Provider } from "react-redux";
 import {store} from "../src/redux/store/index";
+
 
 ReactDOM.render(
   <>
@@ -26,6 +28,7 @@ ReactDOM.render(
           <Route path="/crear-usuario" element={<CrearUsuarioPage />} />
           <Route path="/usuarios" element={<UsuariosPage />} />
           <Route path="/cursos" element={<CursosPages />} />
+          <Route path="/ayuda" element={<AyudaPage />} />
           <Route path="/" element={<LoginPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

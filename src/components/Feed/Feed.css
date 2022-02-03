@@ -22,3 +22,7 @@
   #containerNuevo{
     margin-bottom: 5vmin;
   }
+
+  .contenidoText{
+    text-align: start;
+  }

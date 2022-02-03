@@ -1,27 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-body{
+body {
   background-color: rgb(236, 236, 236);
   margin: 0%;
   padding: 0%;
 }
 
-
-#nombreUser{
+#nombreUser {
   font-size: 3.8rem;
-  
 }
 
-#datos{
-  color: #6229D9;
-}
-/* Boton de mensaje */
-.msg-btn {
-  width: 8vmin;
-  position: fixed;
-  left: 92%;
-  bottom: 4%;
+#datos {
+  color: #6229d9;
 }
 
-.msg-btn:hover {
-  width: 8.5vmin;
+#floatingTextarea22{
+  height: 12vh;
 }

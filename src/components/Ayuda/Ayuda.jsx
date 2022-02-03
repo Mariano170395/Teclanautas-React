@@ -83,4 +83,4 @@ const Ayuda = () => {
   );
 };
 
-export { Ayuda };
+export default Ayuda

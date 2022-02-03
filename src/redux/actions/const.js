@@ -5,4 +5,11 @@ export{
     SAVE_POST
 }
 
-//Next Actions
+//Notification Actions
+const NEW_NOTIFICATION = 'NEW_NOTIFICATION'
+const READ_NOTIFICATION = 'READ_NOTIFICATION'
+
+export{
+    NEW_NOTIFICATION,
+    READ_NOTIFICATION
+}

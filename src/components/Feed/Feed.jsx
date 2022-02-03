@@ -16,7 +16,6 @@ const mapStateToProps = (state) => {
 };
 
 const Feed = ({ posts, save }) => {
-
   console.log(posts.length);
   const [user] = useLocalStorage("USER_DATA", {});
 
@@ -30,7 +29,7 @@ const Feed = ({ posts, save }) => {
   const submit = (event) => {
     event.preventDefault();
     let newPost = {
-      id: posts.length,
+      id: posts.length + 1,
       contenido: event.target[0].value,
     };
 
@@ -56,19 +55,31 @@ const Feed = ({ posts, save }) => {
                   ></textarea>
                 </div>
               </div>
-              <button className="btn btn-primary">Submit</button>
+              <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button className="btn btn-primary me-md-2" type="submit">
+                  Button
+                </button>
+              </div>
             </form>
           </div>
         </div>
-       {posts.map((post) => {
+        <br />
+        <br />
+        {posts.map((post) => {
           return (
-            <div className="card" key={post.id}>
-              <div className="card-body">
-                <p className="card-text">{post.contenido}</p>
+            <>
+              <div className="card mb-3">
+                <img src="..." className="card-img-top" alt="..."/>
+                <div className="card-body text-start">
+                  <h5 className="card-title">Card title</h5>
+                  <p clasNames="card-text" id='contenidoText'>{post.contenido}</p>
+                  <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                </div>
               </div>
-            </div>
+              <br />
+            </>
           );
-        })} 
+        })}
       </div>
       <br />
       <br />
@@ -76,4 +87,4 @@ const Feed = ({ posts, save }) => {
   );
 };
 
-export default connect (mapStateToProps, {save})(Feed)
+export default connect(mapStateToProps, { save })(Feed);

@@ -4,27 +4,25 @@ import avatar from "./Img/avatar.png";
 import { buscarUserApi } from "../../api/api";
 import { Link } from "react-router-dom";
 
-
 let Amigos = () => {
-  
-  // const [searchAmigo, setSearchAmigo] = useState('');
-  // const [getAmigo, setGetAmigo] = useState([]);
 
-  // const handleInput = (e) => {
-  //   setSearchAmigo(e.target.value);
-  // };
+  const [searchAmigo, setSearchAmigo] = useState("");
+   const [getAmigo, setGetAmigo] = useState([]);
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleInput = (e) => {
+    setSearchAmigo(e.target.value);
+  };
 
+   const handleSubmit = async (e) => {
+     e.preventDefault();
+     
+    setGetAmigo([searchAmigo])
   //   setSearch(searchAmigo);
 
-  //   const buscar = { name: searchAmigo };
-  //   let response = await buscarUserApi(buscar);
-  //   setGetAmigo(response);
-  // };
-
-
+      const buscar = { name: searchAmigo };
+     let response = await buscarUserApi(buscar);
+      setGetAmigo(response);
+   };
 
   return (
     <>
@@ -38,7 +36,7 @@ let Amigos = () => {
                 type="text"
                 placeholder="Buscar"
                 className="form-control"
-                // onChange={handleInput}
+                onChange={handleInput}
                 // value={searchAmigo}
               />
             </div>
@@ -47,7 +45,7 @@ let Amigos = () => {
                 className="btn btn-primary"
                 id="btnBuscar"
                 type="submit"
-                // onClick={handleSubmit}
+                onClick={handleSubmit}
               >
                 Buscar
               </button>
@@ -57,7 +55,7 @@ let Amigos = () => {
         <div className="row">
           <div className="col-sm-12">
             <div className="containerFlex">
-              {/* {getAmigo.map((element) => {
+               {getAmigo.map((element) => {
                 return (
                   <div className="card text-center w-1" key={element.id}>
                     <div className="card-body">
@@ -76,7 +74,7 @@ let Amigos = () => {
                     </div>
                   </div>
                 );
-              })} */}
+              })} 
             </div>
           </div>
         </div>
@@ -85,4 +83,4 @@ let Amigos = () => {
   );
 };
 
-export default Amigos
+export default Amigos;
