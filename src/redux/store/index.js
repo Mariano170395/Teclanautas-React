@@ -1,10 +1,13 @@
 import { createStore, combineReducers } from "redux";
 import { postReducer } from "../reducers/post";
 import { notificationReducer } from "../reducers/notification";
+import { admnCommentReducer } from "../reducers/admnComment";
+
 
 const reducers = combineReducers({
   postReducer,
-  notificationReducer
+  notificationReducer,
+  admnCommentReducer
 });
 
 const store = createStore(

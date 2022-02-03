@@ -13,3 +13,11 @@ export{
     NEW_NOTIFICATION,
     READ_NOTIFICATION
 }
+
+//Tecler Comment Actions
+
+const SAVE_ADMIN_COMMENT = 'SAVE_ADMIN_COMMENT'
+
+export{
+    SAVE_ADMIN_COMMENT
+}
