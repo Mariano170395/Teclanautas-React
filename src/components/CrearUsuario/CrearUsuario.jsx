@@ -1,80 +1,137 @@
 import { React, useState } from "react";
 import { crearUsuarioApi } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import "./CrearUsuario.css";
 
 const CrearUsuario = () => {
+  //Destructuring de useForm
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
   const Navigate = useNavigate();
 
   const [user, setUser] = useState({
-    email:"",
-    pass:"",
-    name:"",
-    last_name:"",
+    email: "",
+    pass: "",
+    name: "",
+    last_name: "",
     brd_date: "",
-    img:"",
+    img: "",
   });
 
-  let createUser = async(event) => {
-    event.preventDefault();
+  let createUser = async (payload) => {
     const usuarioCreado = {
-      email: event.target[0].value,
-      pass: event.target[1].value,
-      name: event.target[2].value,
-      last_name: event.target[3].value,
-      brd_date: event.target[4].value,
-      hobby: event.target[5].value,
-      puesto: event.target[6].value,
-      habilidad: event.target[7].value,
-      img: event.target[8].value,
+      email: payload.email,
+      pass: payload.pass,
+      name: payload.name,
+      //  last_name: payload.last_name
+      // brd_date: event.target[4].value,
+      // hobby: event.target[5].value,
+      // puesto: event.target[6].value,
+      // habilidad: event.target[7].value,
+      // img: event.target[8].value,
     };
 
     setUser(usuarioCreado);
-    let response = await crearUsuarioApi(usuarioCreado)
-    Navigate('/')
-    return response
+    let response = await crearUsuarioApi(usuarioCreado);
+    Navigate("/");
+    return response;
   };
 
+  console.log(
+    watch("email"),
+    watch("pass"),
+    watch('name')
+    );
 
-  
-  
   return (
     <>
       <div className="container">
         <br />
         <br />
-        <div className="card" id='cardForm'>
+        <div className="card" id="cardForm">
           <h1>Ingresa tus Datos:</h1>
-          <form onSubmit={createUser}>
+          <form onSubmit={handleSubmit(createUser)}>
             <div className="mb-3">
               <label className="form-label">Email</label>
-              <input type="email" className="form-control" required/>
+              <input
+                {...register("email", {
+                  required: true,
+                  maxLength: 100,
+                  pattern:
+                    /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})/,
+                })}
+                className="form-control"
+              />
+              {errors?.email?.type === "required" && (
+                <p className="error">Este campo es requerido</p>
+              )}
+              {errors?.email?.type === "pattern" && (
+                <p className="error">Ingresa un email valido</p>
+              )}
             </div>
             <div className="mb-3">
               <label className="form-label">Contraseña</label>
               <input
-                type="password"
+                {...register("pass", {
+                  required: true,
+                  maxLength: 50,
+                })}
                 className="form-control"
-                id="correo_usuario"
-                required
               />
+              {errors?.pass?.type === "maxLength" && (
+                <p className="error">
+                  La Contraseña debe tener un maximo de 50 caracteres
+                </p>
+              )}
+              {errors?.pass?.type === "required" && (
+                <p className="error">Este campo es requerido</p>
+              )}
             </div>
             <div className="mb-3">
               <label className="form-label">Nombre</label>
               <input
                 type="text"
                 className="form-control"
-                required
+                {...register("name", {
+                  required: true,
+                  maxLength: 100,
+                  pattern: /^[a-zA-Z]/,
+                })}
               />
+              {errors?.name?.type === "required" && (
+                <p className="error">Este campo es requerido</p>
+              )}
+              {errors?.name?.type === "pattern" && (
+                <p className="error">Solamente son permitidas letras</p>
+              )}
             </div>
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <label className="form-label">Apellidos</label>
-              <input type="text" className="form-control" required />
+              <input
+                type="text"
+                className="form-control"
+                {...register("name", {
+                  required: true,
+                  maxLength: 100,
+                  pattern: /^[a-zA-Z]/,
+                })}
+              />
+              {errors?.email?.type === "required" && (
+                <p className="error">Este campo es requerido</p>
+              )}
+              {errors?.email?.type === "pattern" && (
+                <p className="error">Solamente son permitidas letras</p>
+              )}
             </div>
             <div className="mb-3">
               <label className="form-label">Fecha de Nacimiento</label>
-              <input type="date" className="form-control" required/>
+              <input type="date" className="form-control" required />
             </div>
             <div className="mb-3">
               <label className="form-label">Hobby</label>
@@ -82,7 +139,7 @@ const CrearUsuario = () => {
             </div>
             <div className="mb-3">
               <label className="form-label">Puesto</label>
-              <input type="text" className="form-control" required/>
+              <input type="text" className="form-control" required />
             </div>
             <div className="mb-3">
               <label className="form-label">Habilidad</label>
@@ -90,11 +147,11 @@ const CrearUsuario = () => {
             </div>
             <div className="mb-3">
               <label className="form-label">Ingresa el link de tu Imagen</label>
-              <input type="text" className="form-control"  />
-            </div>
+              <input type="text" className="form-control" />
+            </div> */}
 
             <div className="d-grid gap-2 col-12 mx-auto">
-              <button className="btn btn-primary" type="submit" id='btnLogin'>
+              <button className="btn btn-primary" type="submit" id="btnLogin">
                 Registro
               </button>
             </div>
