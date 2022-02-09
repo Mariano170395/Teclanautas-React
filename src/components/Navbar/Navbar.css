@@ -1,6 +1,6 @@
 /*Navbar*/
 .container-fluid{
-    background-color: rgb(100, 176, 238)
+    background-color: rgb(120, 200, 200)
 }
 
 .Logo {
@@ -23,8 +23,7 @@
   }
   
   .nav-item h1:hover {
-    color: rgb(229, 255, 85);
+    color: rgb(255, 250, 0);
   }
   
 
-  

@@ -49,10 +49,11 @@ const Feed = ({ posts, save }) => {
                 <div className="form-floating">
                   <textarea
                     className="form-control"
-                    placeholder="Escribe tu cita aqui"
+                    placeholder="Que estas pensando?"
                     id="floatingTextarea2"
                     required
                   ></textarea>
+                  <label for="floatingPassword">Que estas pensando?</label>
                 </div>
               </div>
               <div className="d-grid gap-2 d-md-flex justify-content-md-end">

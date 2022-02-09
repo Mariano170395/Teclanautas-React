@@ -38,7 +38,7 @@ const Ayuda = () => {
         <br />
         <div className="card w-60">
           <div className="card-body">
-            <h5 className="card-title">Necesitas Ayuda? Contactanos!</h5>
+            <h5 className="card-title text-center">Necesitas Ayuda? Contactanos!</h5>
             <form onSubmit={handleSubmitHelp}>
               <div className="mb-3">
                 <label
@@ -47,13 +47,17 @@ const Ayuda = () => {
                 >
                   Tu correo electronico
                 </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="Tu Correo"
-                  onChange={handleMail}
-                />
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Email"
+                    onChange={handleMail}
+                  />
+                  <label for="floatingInput">Email</label>
+                </div>
+                
               </div>
               <div className="mb-3">
                 <label
@@ -62,12 +66,17 @@ const Ayuda = () => {
                 >
                   Deja tu mensaje aqui
                 </label>
-                <textarea
-                  className="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                  onChange={handleMessage}
-                ></textarea>
+                <div className="form-floating">
+                  <textarea
+                    className="form-control"
+                    placeholder="Comentarios"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    onChange={handleMessage}
+                  ></textarea>
+                  <label for="floatingTextarea">Comentarios</label>
+                </div>
+                
               </div>
               <br />
               <div className="d-grid gap-2">

@@ -14,8 +14,8 @@
   }
 
   .card-header{
-    background-color: #6229D9;
-    color: white;
+    background-color: rgb(120, 200, 200, 0.6);
+    color: rgb(255, 250, 0);
     font-size: 1.5rem;
   }
 
@@ -26,3 +26,4 @@
   .contenidoText{
     text-align: start;
   }
+
