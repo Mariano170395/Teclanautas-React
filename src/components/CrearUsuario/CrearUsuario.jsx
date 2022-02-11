@@ -43,14 +43,6 @@ const CrearUsuario = () => {
     return response;
   };
 
-  // console.log(
-  //   watch("email"),
-  //   watch("pass"),
-  //   watch("name"),
-  //   watch("last_name"),
-  //   watch("brd_date")
-  // );
-  //Prueba
 
   return (
     <>
