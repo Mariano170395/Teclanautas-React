@@ -109,10 +109,14 @@ const Login = () => {
       <div className="container">
         <br />
         <br />
+        <div className="card text-center" id="cardTitulo">
+              <label className="title">
+              Hola! Ingresa tus Datos
+              </label>
+        </div>
         <div className="col d-flex justify-content-center" >
-          <div className="card w-100" id="bckG">
+          <div className="card w-100">
             <div className="card-body">
-              <h5 className="card-title text-center">Hola! Ingresa tus Datos</h5>
               {error && (
                 <div className="alert alert-danger" role="alert">
                   Has ingresado algun dato mal

@@ -41,8 +41,12 @@ const Feed = ({ posts, save }) => {
     <>
       <br />
       <div className="container" id="containerNuevo">
+        <div className="card text-center" id="cardTitulo">
+              <label className="title">
+              Crea un post!
+              </label>
+        </div>
         <div className="card">
-          <h5 className="card-header">Crear Post</h5>
           <div className="card-body">
             <form onSubmit={submit}>
               <div className="mb-3 form-check">
@@ -69,10 +73,15 @@ const Feed = ({ posts, save }) => {
         {posts.map((post) => {
           return (
             <>
+              <div className="card" id="cardTitulo">
+                <label className="row title">
+                  <h5 className="card-title">{user.name}</h5>
+                  <img src="..." className="card-img-top" alt="..."/>
+                </label>
+              </div>
               <div className="card mb-3">
-                <img src="..." className="card-img-top" alt="..."/>
+                
                 <div className="card-body text-start">
-                  <h5 className="card-title">Card title</h5>
                   <p clasNames="card-text" id='contenidoText'>{post.contenido}</p>
                   <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                 </div>

@@ -27,3 +27,7 @@ body {
 #img {
   background-color: rgb(120, 200, 200, 0.6);
 }
+
+.title {
+  color: rgb(255, 250, 0);
+}

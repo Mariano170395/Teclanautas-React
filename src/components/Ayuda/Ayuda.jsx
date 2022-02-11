@@ -36,9 +36,11 @@ const Ayuda = () => {
       <div className="container">
         <br />
         <br />
+        <div className="card text-center" id="cardTitulo">
+          <label className="title">Necesitas Ayuda? Contactanos!</label>
+        </div>
         <div className="card w-60">
           <div className="card-body">
-            <h5 className="card-title text-center">Necesitas Ayuda? Contactanos!</h5>
             <form onSubmit={handleSubmitHelp}>
               <div className="mb-3">
                 <label

@@ -55,10 +55,11 @@ const CrearUsuario = () => {
         <br />
         <br />
         <div className="card" id="cardForm">
-          <h1>Ingresa tus Datos:</h1>
+          <h1 className="text-center">Ingresa tus Datos:</h1>
           <form onSubmit={handleSubmit(createUser)}>
             <div className="mb-3">
               <label className="form-label">Email</label>
+              <div className="form-floating mb-3">
               <input
                 {...register("email", {
                   required: true,
@@ -67,6 +68,7 @@ const CrearUsuario = () => {
                     /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})/,
                 })}
                 className="form-control"
+                placeholder="email"
               />
               {errors?.email?.type === "required" && (
                 <p className="error">Este campo es requerido</p>
@@ -74,42 +76,53 @@ const CrearUsuario = () => {
               {errors?.email?.type === "pattern" && (
                 <p className="error">Ingresa un email valido</p>
               )}
+              <label for="floatingInput">ejemplo@ejem.com</label>
+              </div>
             </div>
             <div className="mb-3">
               <label className="form-label">Contraseña</label>
-              <input
-                {...register("pass", {
-                  required: true,
-                  maxLength: 50,
-                })}
-                className="form-control"
-              />
-              {errors?.pass?.type === "maxLength" && (
-                <p className="error">
-                  La Contraseña debe tener un maximo de 50 caracteres
-                </p>
-              )}
-              {errors?.pass?.type === "required" && (
-                <p className="error">Este campo es requerido</p>
-              )}
+              <div className="form-floating mb-3">
+                <input
+                  {...register("pass", {
+                    required: true,
+                    maxLength: 50,
+                  })}
+                  className="form-control"
+                  placeholder="Password"
+                />
+                {errors?.pass?.type === "maxLength" && (
+                  <p className="error">
+                    La Contraseña debe tener un maximo de 50 caracteres
+                  </p>
+                )}
+                {errors?.pass?.type === "required" && (
+                  <p className="error">Este campo es requerido</p>
+                )}
+                <label for="floatingInput">Password</label>
+              </div>
             </div>
             <div className="mb-3">
               <label className="form-label">Nombre</label>
-              <input
-                type="text"
-                className="form-control"
-                {...register("name", {
-                  required: true,
-                  maxLength: 100,
-                  pattern: /^[a-zA-Z]/,
-                })}
-              />
-              {errors?.name?.type === "required" && (
-                <p className="error">Este campo es requerido</p>
-              )}
-              {errors?.name?.type === "pattern" && (
-                <p className="error">Solamente son permitidas letras</p>
-              )}
+              <div className="form-floating">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Nombres"
+                  {...register("name", {
+                    required: true,
+                    maxLength: 100,
+                    pattern: /^[a-zA-Z]/,
+                  })}
+                />
+                {errors?.name?.type === "required" && (
+                  <p className="error">Este campo es requerido</p>
+                )}
+                {errors?.name?.type === "pattern" && (
+                  <p className="error">Solamente son permitidas letras</p>
+                )}
+                <label for="floatingInput">Nombre(s)</label>
+              </div>
+              
             </div>
             {/* <div className="mb-3">
               <label className="form-label">Apellidos</label>
