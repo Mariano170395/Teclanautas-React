@@ -8,7 +8,14 @@
   }
   
   #btnLogin:hover {
-    background-color: rgb(100, 176, 238);
-    color: rgb(229, 255, 85);
+    background-color: rgb(120, 200, 200, );
+    color: rgb(255, 250, 0);
     border: 0 transparent;
+  }
+
+  .text-center {
+    background-color: rgb(120, 200, 200, 0.6);
+    border-radius: 1%;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
   }

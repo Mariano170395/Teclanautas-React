@@ -8,7 +8,7 @@
 }
 
 #btnLogin:hover {
-  background-color: rgb(100, 176, 238);
+  background-color: rgb(120, 200, 200);
   color: rgb(229, 255, 85);
   border: 0 transparent;
 }
@@ -16,4 +16,13 @@
 .noTienesCuenta{
   color: #6229d9;
   text-decoration: none;
+}
+
+#bckG {
+  background-color: rgb(120, 200, 200, 0.6);
+  border-radius: 1%;
+}
+
+.tituloCard {
+  color: rgb(255, 250, 0);
 }

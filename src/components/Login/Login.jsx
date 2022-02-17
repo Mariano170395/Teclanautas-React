@@ -59,7 +59,7 @@ import "./Login.css";
 // console.log(linearSearch(888, arr
 
 
-
+//Hola
 
 
 const Login = () => {
@@ -109,10 +109,14 @@ const Login = () => {
       <div className="container">
         <br />
         <br />
-        <div className="col d-flex justify-content-center">
+        <div className="card text-center" id="cardTitulo">
+              <label className="title">
+              Hola! Ingresa tus Datos
+              </label>
+        </div>
+        <div className="col d-flex justify-content-center" >
           <div className="card w-100">
             <div className="card-body">
-              <h5 className="card-title">Hola! Ingresa tus Datos</h5>
               {error && (
                 <div className="alert alert-danger" role="alert">
                   Has ingresado algun dato mal
@@ -124,25 +128,34 @@ const Login = () => {
                   <label htmlFor="exampleInputEmail1" className="form-label">
                     Email address
                   </label>
+                  <div class="form-floating mb-3">
                   <input
                     type="email"
+                    placeholder="Ejemplo@ejem.com"
                     className="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     required
                   />
+                    <label for="floatingInput">Ejemplo@ejem.com</label>
+                  </div>
                 </div>
                 <br />
                 <div className="mb-3">
                   <label htmlFor="exampleInputPassword1" className="form-label">
                     Password
                   </label>
+                  <div class="form-floating">
                   <input
                     type="password"
+                    placeholder="Password"
                     className="form-control"
                     id="exampleInputPassword1"
                     required
                   />
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  
                 </div>
                 {!loading && (
                   <div className="d-grid gap-2">

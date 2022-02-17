@@ -15,9 +15,14 @@ const Perfil = () => {
       <br />
       <br />
        <div className="container">
-         <div className="card mb-3">
+       <div className="card text-center" id="cardTitulo">
+              <label className="title">
+                  {user.name} {user.last_name}
+              </label>
+        </div>
+         <div className="card mb-3" id="perfil">
           <div className="row g-0">
-            <div className="col-md-4">
+            <div className="col-md-4" id="img">
               <img
                 src={user.img}
                 className="img-fluid rounded-start"
@@ -26,10 +31,8 @@ const Perfil = () => {
               />
             </div>
             <div className="col-md-8">
+            
               <div className="card-body">
-                <h1 className="card-title" id="nombreUser">
-                  {user.name} {user.last_name}
-                </h1>
                 <br />
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item"><h3><span id='datos'>Correo:</span> {user.email}</h3></li>
