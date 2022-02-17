@@ -43,11 +43,10 @@ const CrearUsuario = () => {
     return response;
   };
 
-  console.log(
-    watch("email"),
-    watch("pass"),
-    watch('name')
-    );
+  //Prueba
+  
+
+
 
     return (
       <>
