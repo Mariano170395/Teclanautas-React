@@ -1,0 +1,14 @@
+#cardForm{
+    padding: 2%;
+}
+
+#btnLogin {
+    background-color: #6229d9;
+    border: 0 transparent;
+  }
+  
+  #btnLogin:hover {
+    background-color: rgb(100, 176, 238);
+    color: rgb(229, 255, 85);
+    border: 0 transparent;
+  }

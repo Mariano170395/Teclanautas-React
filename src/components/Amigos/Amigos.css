@@ -8,7 +8,6 @@
   .card{
       margin: 5px;
       padding: 25px;
-      width: 19.5rem;
   }
   
   .card-img-top{
@@ -17,13 +16,13 @@
       margin: 0 auto;
   }
   
-  .card-title{
+  /* .card-title{
       text-align: center;
-  }
+  } */
   
-  .card-text{
+  /* .card-text{
       text-align: center;
-  }
+  } */
   
   .btn{
       background-color: #6229D9;
@@ -40,4 +39,13 @@
   
   .ordenar{
       display: flex;
+  }
+
+  .avatarUsuario{
+      width: 5rem;
+      border-radius: 50%;
+  }
+
+  #TextoCard{
+      font-size: 1.5rem;
   }

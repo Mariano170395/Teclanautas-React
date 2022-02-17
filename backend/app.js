@@ -2,6 +2,19 @@ const express = require('express');
 const cors = require('cors')
 const app = express();
 const sequelize = require('./db/conexion')
+
+//Vistas
+const user = require('./view/user')
+const message =  require('./view/message')
+const curso = require('./view/curso')
+const crearUsuario =  require('./view/crear-usuario')
+const userList = require('./view/listUser')
+const buscarUser = require('./view/buscar-user')
+
+
+require("dotenv").config()
+
+//Middleware
 app.use(express.json())
 app.use(cors())
 
@@ -24,9 +37,10 @@ let serverStart = async () => {
 
 serverStart()
 
+user(app)
+message(app)
+curso(app)
+crearUsuario(app)
+userList(app)
+buscarUser(app)
 
-app.post('/registro',async (req,res)=>{
-    let result = await req.body.user
-    console.log(result);
-    res.send(result)
-})

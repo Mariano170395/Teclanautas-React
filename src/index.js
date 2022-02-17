@@ -1,29 +1,40 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Navbar } from "./components/Navbar/Navbar";
-import { Feed } from "./components/Feed/Feed";
-import { Perfil } from "./components/Perfil/Perfil";
-import { Login } from "./components/Login/Login";
-import { Cursos } from "./components/Cursos/Cursos";
-import {Amigos} from './components/Amigos/Amigos'
-import { CrearUsuario } from "./components/CrearUsuario/CrearUsuario";
-import { NotFound } from "./components/NotFound/NotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LoginPage } from "./pages/LoginPage";
+import { HomePage } from "./pages/HomePage";
+import { PerfilPage } from "./pages/PerfilPage";
+import { CrearUsuarioPage } from "./pages/CrearUsuarioPage";
+import { UsuariosPage } from "./pages/UsuariosPage";
+import { CursosPages } from "./pages/CursosPages";
+import { NotFoundPage } from "./pages/NotFoundPage";
+import { PerfIdPage } from "./pages/PerfIdPage";
+import { NotificacionesPage } from "./pages/NotificacionesPage";
+import { AyudaPage } from "./pages/AyudaPage";
+//Redux
+import { Provider } from "react-redux";
+import {store} from "../src/redux/store/index";
+
 
 ReactDOM.render(
   <>
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/feed" element={<Feed />} />
-        <Route path="/perfil" element={<Perfil />} />
-        <Route path="/cursos" element={<Cursos />} />
-        <Route path="/login" element={<Login />} />
-        <Route path='/crear-usuario' element={<CrearUsuario/>}/>
-        <Route path='/amigos' element={<Amigos/>}/>
-        <Route path='*' element={<NotFound/>}/>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/perfil/:id" element={<PerfIdPage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/notificaciones" element={<NotificacionesPage />} />
+          <Route path="/perfil" element={<PerfilPage />} />
+          <Route path="/crear-usuario" element={<CrearUsuarioPage />} />
+          <Route path="/usuarios" element={<UsuariosPage />} />
+          <Route path="/cursos" element={<CursosPages />} />
+          <Route path="/ayuda" element={<AyudaPage />} />
+          <Route path="/" element={<LoginPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </>,
+
   document.getElementById("root")
 );
