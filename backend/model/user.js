@@ -13,3 +13,16 @@ module.exports.login = async (userData) => {
   };
   return loginResponse;
 };
+
+module.exports.whoiam = async (userData) => {
+  let response = await sql.query(
+    `SELECT * FROM users WHERE email LIKE '${userData.email}'`
+  );
+  let whoiamResult = (await response[0][0]) ? true : false;
+
+  let whoiamResponse = {
+    success: whoiamResult,
+    data: response[0][0] ? response[0][0] : false,
+  };
+  return whoiamResponse;
+};
