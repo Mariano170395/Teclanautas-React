@@ -10,3 +10,15 @@ module.exports.loginUser = async (userData) => {
   }
   return { error: "usuario no encontrado" };
 };
+
+module.exports.whoiam = async (userData) => {
+  try {
+      let result = await userModel.whoiam(userData);
+      if (result.success) {
+        return result;
+      }
+      return { error: "usuario no encotrado" };
+    } catch (error) {
+    return { error: error };
+  }
+};
