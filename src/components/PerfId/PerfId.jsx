@@ -62,7 +62,7 @@ const PerfId = ({ comentarios, saveComm }) => {
       setUser(newState);
     };
     userId(id);
-  }, []);
+  }, [id]);
 
   return (
     <>
