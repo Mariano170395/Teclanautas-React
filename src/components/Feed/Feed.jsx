@@ -41,23 +41,28 @@ const Feed = ({ posts, save }) => {
     <>
       <br />
       <div className="container" id="containerNuevo">
+        <div className="card text-center" id="cardTitulo">
+              <label className="title">
+              Crea un post!
+              </label>
+        </div>
         <div className="card">
-          <h5 className="card-header">Crear Post</h5>
           <div className="card-body">
             <form onSubmit={submit}>
               <div className="mb-3 form-check">
                 <div className="form-floating">
                   <textarea
                     className="form-control"
-                    placeholder="Escribe tu cita aqui"
+                    placeholder="Que estas pensando?"
                     id="floatingTextarea2"
                     required
                   ></textarea>
+                  <label for="floatingPassword">Que estas pensando?</label>
                 </div>
               </div>
               <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button className="btn btn-primary me-md-2" type="submit">
-                  Button
+                  Publicar
                 </button>
               </div>
             </form>
@@ -68,10 +73,15 @@ const Feed = ({ posts, save }) => {
         {posts.map((post) => {
           return (
             <>
+              <div className="card" id="cardTitulo">
+                <label className="row title">
+                  <h5 className="card-title">{user.name}</h5>
+                  <img src="..." className="card-img-top" alt="..."/>
+                </label>
+              </div>
               <div className="card mb-3">
-                <img src="..." className="card-img-top" alt="..."/>
+                
                 <div className="card-body text-start">
-                  <h5 className="card-title">Card title</h5>
                   <p clasNames="card-text" id='contenidoText'>{post.contenido}</p>
                   <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                 </div>

@@ -42,12 +42,12 @@ const CrearUsuario = () => {
     Navigate("/");
     return response;
   };
+  
+  //Hola Ale
+  //Hola Tony
 
-  console.log(
-    watch("email"),
-    watch("pass"),
-    watch('name')
-    );
+  //Prueba
+  
 
     return (
       <>

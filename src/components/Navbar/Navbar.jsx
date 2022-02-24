@@ -29,7 +29,7 @@ const Navbar = ({ readNotification, notification }) => {
           </NavLink>
           <button
             className="navbar-toggler"
-            type="button"
+            type="button" 
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
@@ -42,30 +42,31 @@ const Navbar = ({ readNotification, notification }) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
                 <NavLink className="nav-link" to="/perfil">
-                  <h1>Perfil</h1>
+                  <h5>Perfil</h5>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/usuarios">
-                  <h1>Usuarios</h1>
+                  <h5>Usuarios</h5>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/cursos">
-                  <h1>Cursos</h1>
+                  <h5>Cursos</h5>
                 </NavLink>
               </li>
               <li className="nav-item" onClick={readNotification}>
                 <NavLink className="nav-link" to="/notificaciones">
-                  <h1> Noti{notification && "*"}</h1>
+                  <h5> Noti{notification && "*"}</h5>
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/" onClick={cerrarSesion}>
-                  <h1>Cerrar</h1>
-                </NavLink>
-              </li>
+              
             </ul>
+            <span className="nav-item" id="exit">
+                <NavLink className="nav-link" to="/" onClick={cerrarSesion}>
+                  <h5>Cerrar Sesion</h5>
+                </NavLink>
+              </span>
           </div>
         </div>
       </nav>

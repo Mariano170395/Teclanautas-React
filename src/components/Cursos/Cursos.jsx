@@ -39,34 +39,39 @@ const Cursos = () => {
     <div className="container">
       <br />
       <br />
-      <div className="card" id="cardTitulo">
+      <div className="card text-center" id="cardTitulo">
         <label className="title">Nuevo curso</label>
       </div>
       <div className="card">
         <form>
           <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Nombre del Curso
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              onChange={inputNombreHandle}
-            />
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Curso"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                onChange={inputNombreHandle}
+              />
+              <label for="floatingInput">Curso</label>
+            </div>
+            
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
               Lugar donde se Realizo
             </label>
-            <input
-              type="text"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              onChange={inputLugarHandle}
-            />
+            <div class="form-floating">
+              <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <option selected>Seleciona lugar del curso</option>
+                <option value="1">México</option>
+                <option value="2">Argentina</option>
+                <option value="3">Dimension C-137</option>
+              </select>
+              <label for="floatingSelect">Lugar</label>
+            </div>
+            
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
@@ -86,7 +91,7 @@ const Cursos = () => {
             id="btnSubmit"
             onClick={handleSubmit}
           >
-            Submit
+            Publicar
           </button>
         </form>
       </div>
