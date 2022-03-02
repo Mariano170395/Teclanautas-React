@@ -7,61 +7,6 @@ import "./Login.css";
 
 
 
-// function linearSearch(value, list) {
-//   let found = false;
-//   let position = -1;
-//   let index = 0;
-
-//   while (!found && index < list.length) {
-//     if (list[index] == value) {
-//       found = true;
-//       position = index;
-//     } else {
-//       index += 1;
-//     }
-//   }
-//   return position;
-// }
-
-
-// function binarySearch(value, list) {
-//   let first = 0;
-//   let last = list.length - 1;
-//   let position = -1;
-//   let found = false;
-//   let middle;
-//   while (found === false && first <= last) {
-//     middle = Math.floor((first + last) / 2);
-//     if (list[middle] == value) {
-//       found = true;
-//       position = middle;
-//     } else if (list[middle] > value) {
-//       //if in lower half
-//       last = middle - 1;
-//     } else {
-//       //in in upper half
-//       first = middle + 1;
-//     }
-//   }
-//   return position;
-// }
-
-
-// console.time("arreglo");
-// let arregloLoco = arrayGenerator(1000);
-// console.timeEnd("arreglo");
-
-// console.time("binaria");
-// console.log(binarySearch(888, arregloLoco));
-// console.timeEnd("binaria");
-
-// console.time("linear");
-// console.log(linearSearch(888, arr
-
-
-
-
-
 const Login = () => {
 
   //Estado Login
