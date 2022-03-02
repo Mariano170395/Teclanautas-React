@@ -6,3 +6,8 @@ module.exports = (app) => {
     res.send(result);
   });
 };
+
+app.post("/whoiam",auth.authenticate,async (req, res) => {
+  let result = await userController.whoiam(req.body);
+  res.send(result);
+});

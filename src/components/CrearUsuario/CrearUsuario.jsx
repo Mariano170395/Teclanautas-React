@@ -43,12 +43,7 @@ const CrearUsuario = () => {
     return response;
   };
   
-  //Hola Ale
-  //Hola Tony
-
-  //Prueba
   
-
     return (
       <>
         <div className="container">
@@ -83,7 +78,6 @@ const CrearUsuario = () => {
                     maxLength: 50,
                   })}
                   className="form-control"
-                  type="password"
                 />
                 {errors?.pass?.type === "maxLength" && (
                   <p className="error">

@@ -23,6 +23,7 @@
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
   
+
   .nav-item h5:hover {
     color: rgb(255, 250, 0);
   }
@@ -31,9 +32,8 @@
     padding: 0%;
   }
 
+
   #exit {
     margin-right: 25px;
   }
   
-  
-

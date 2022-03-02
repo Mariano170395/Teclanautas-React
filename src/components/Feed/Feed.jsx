@@ -22,7 +22,7 @@ const Feed = ({ posts, save }) => {
   //Cambiar titulo
   useEffect(() => {
     document.title = `Hola ${user.name}`;
-  }, []);
+  }, [user.name]);
 
   // const [post, setPost] = useState([]);
 
