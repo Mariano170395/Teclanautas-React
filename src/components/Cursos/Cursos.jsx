@@ -91,7 +91,7 @@ const Cursos = () => {
             id="btnSubmit"
             onClick={handleSubmit}
           >
-            Submit
+            Publicar
           </button>
         </form>
       </div>

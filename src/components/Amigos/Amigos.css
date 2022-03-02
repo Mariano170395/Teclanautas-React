@@ -16,9 +16,9 @@
       margin: 0 auto;
   }
   
-  /* .card-title{
+  .card-title{
       text-align: center;
-  } */
+  }
   
   /* .card-text{
       text-align: center;
@@ -28,7 +28,9 @@
       background-color: #6229D9;
       border: 0 transparent;
       font-weight: bold;
-      margin: 0 31%
+      margin-left: 25px;
+      padding-left: 25px;
+      padding-right: 25px;
   }
   
   

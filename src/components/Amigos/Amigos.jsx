@@ -31,7 +31,7 @@ let Amigos = () => {
         <br />
         <div className="row">
           <div className="ordenar">
-            <div className="col-sm-12">
+            <div className="col-sm-10">
               <input
                 type="text"
                 placeholder="Buscar"
@@ -40,15 +40,17 @@ let Amigos = () => {
                 // value={searchAmigo}
               />
             </div>
-            <div className="col-sm-1">
-              <button
-                className="btn btn-primary"
-                id="btnBuscar"
-                type="submit"
-                onClick={handleSubmit}
-              >
-                Buscar
-              </button>
+            <div className="justify-content-md-end">
+              <div className="col-sm-4">
+                <button
+                  className="d-grid btn btn-primary"
+                  id="btnBuscar"
+                  type="submit"
+                  onClick={handleSubmit}
+                >
+                  Buscar
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -57,22 +59,33 @@ let Amigos = () => {
             <div className="containerFlex">
                {getAmigo.map((element) => {
                 return (
-                  <div className="card text-center w-1" key={element.id}>
-                    <div className="card-body">
-                      <img
-                        src={element.img}
-                        alt="Usuario"
-                        className="avatarUsuario"
-                      />
-                      <h5 className="card-title">{element.name}</h5>
-                      <p className="card-text" id="TextoCard">
-                        Agregalo ahora a tu red de Teclanautas
-                      </p>
-                      <Link to={`/perfil/${element.id}`} >
-                        <h5>Ir a su perfil</h5>
-                      </Link>
+                  <>
+                    <div>
+                      <div className="card" id="cardTitulo"> 
+                        <label className="row title">
+                          <h5 className="card-title">{element.name}</h5>
+                        </label>
+                      </div>
+                      <div className="card w-1" key={element.id}>
+                        <div className="card-body">
+                          
+                          {/* <img
+                            src={element.img}
+                            alt="Usuario"
+                            className="avatarUsuario"
+                          />
+                          <h5 className="card-title">{element.name}</h5> */}
+                          <p className="card-text" id="TextoCard">
+                            Agregalo ahora a tu red de Teclanautas
+                          </p>
+                          <Link to={`/perfil/${element.id}`} >
+                            <h5>Ir a su perfil</h5>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  
+                  </>
                 );
               })} 
             </div>

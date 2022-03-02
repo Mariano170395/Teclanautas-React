@@ -43,14 +43,7 @@ const CrearUsuario = () => {
     return response;
   };
   
-  //Hola Ale
-  //Hola Tony
-
-  //Prueba
   
-
-
-
     return (
       <>
         <div className="container">

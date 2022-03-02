@@ -62,7 +62,7 @@ const Feed = ({ posts, save }) => {
               </div>
               <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button className="btn btn-primary me-md-2" type="submit">
-                  Button
+                  Publicar
                 </button>
               </div>
             </form>

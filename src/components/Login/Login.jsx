@@ -161,13 +161,13 @@ const Login = () => {
                   <div className="d-grid gap-2">
                     <br />
                     <button type="submit" className="btn btn-primary" id='btnLogin'>
-                      Submit
+                      Ingresar
                     </button>
                   </div>
                 )}
               </form>
               {loading && (
-                <div className="text-center">
+                <div>
                   <div className="spinner-grow text-primary" role="status">
                     <span className="visually-hidden">Cargando...</span>
                   </div>
