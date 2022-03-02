@@ -95,5 +95,6 @@ let Amigos = () => {
     </>
   );
 };
+//prueba
 
 export default Amigos;
